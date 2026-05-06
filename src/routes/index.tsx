@@ -126,7 +126,7 @@ function Index() {
             <section
               key={c}
               id={c}
-              ref={(el) => {
+              ref={(el: HTMLDivElement | null) => {
                 refs.current[c] = el;
               }}
               className="scroll-mt-32"
