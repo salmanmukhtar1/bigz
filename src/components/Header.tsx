@@ -5,10 +5,14 @@ import { useCart, useLang } from "@/lib/store";
 import { t } from "@/lib/i18n";
 
 export function Header({ onCartOpen }: { onCartOpen?: () => void }) {
-  const { lang, setLang } = useLang();
+  const { lang, setLang, hydrate } = useLang();
   const items = useCart((s) => s.items);
   const count = items.reduce((a, b) => a + b.quantity, 0);
   const dict = t[lang];
+
+  useEffect(() => {
+    hydrate();
+  }, [hydrate]);
 
   useEffect(() => {
     document.documentElement.lang = lang;
