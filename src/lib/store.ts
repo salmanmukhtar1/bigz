@@ -53,14 +53,21 @@ export const useCart = create<CartState>()(
   ),
 );
 
-type LangState = { lang: Lang; setLang: (l: Lang) => void };
+type LangState = { lang: Lang; hydrated: boolean; setLang: (l: Lang) => void; hydrate: () => void };
 export const useLang = create<LangState>()(
   persist(
-    (set) => ({
-      lang: typeof window === "undefined" ? "ar" : detectLang(),
+    (set, get) => ({
+      // Always start with "ar" so SSR and first client render match.
+      lang: "ar",
+      hydrated: false,
       setLang: (lang) => {
         if (typeof window !== "undefined") localStorage.setItem("bz-lang", lang);
-        set({ lang });
+        set({ lang, hydrated: true });
+      },
+      hydrate: () => {
+        if (get().hydrated) return;
+        const detected = detectLang();
+        set({ lang: detected, hydrated: true });
       },
     }),
     { name: "bz-lang-store" },

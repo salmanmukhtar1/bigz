@@ -41,8 +41,8 @@
 
   /* Brand */
   --brand-charcoal: oklch(0.14 0.005 270);
-  --brand-red: oklch(0.52 0.19 25);
-  --brand-red-glow: oklch(0.62 0.24 27);
+  --brand-red: oklch(0.34 0.12 18);
+  --brand-red-glow: oklch(0.44 0.16 20);
   --brand-cream: oklch(0.96 0.02 85);
 
   /* Dark premium theme (default) */
@@ -52,19 +52,19 @@
   --card-foreground: oklch(0.96 0.02 85);
   --popover: oklch(0.16 0.008 270);
   --popover-foreground: oklch(0.96 0.02 85);
-  --primary: oklch(0.52 0.19 25);
+  --primary: oklch(0.34 0.12 18);
   --primary-foreground: oklch(0.98 0.01 85);
   --secondary: oklch(0.22 0.01 270);
   --secondary-foreground: oklch(0.96 0.02 85);
   --muted: oklch(0.20 0.008 270);
   --muted-foreground: oklch(0.68 0.02 85);
-  --accent: oklch(0.62 0.24 27);
+  --accent: oklch(0.44 0.16 20);
   --accent-foreground: oklch(0.98 0.01 85);
-  --destructive: oklch(0.55 0.22 25);
+  --destructive: oklch(0.45 0.18 22);
   --destructive-foreground: oklch(0.98 0.01 85);
   --border: oklch(0.25 0.01 270);
   --input: oklch(0.22 0.01 270);
-  --ring: oklch(0.62 0.24 27);
+  --ring: oklch(0.44 0.16 20);
 
   --gradient-brand: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-glow) 100%);
   --gradient-dark: linear-gradient(180deg, oklch(0.10 0.005 270) 0%, oklch(0.16 0.008 270) 100%);
